@@ -12,5 +12,11 @@
 </head>
 <body>
 
+    <h1>${search}님의 페이지</h1>
+
+    <p>${search}님 프로필</p>
+    <img src="/asset/img/${search}.jpg" width="200" height="200" class="img-circle" alt="Generic placeholder thumbnail">
+    <h4>MIN HEO</h4>
+
 </body>
 </html>

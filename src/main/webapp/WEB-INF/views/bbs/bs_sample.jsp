@@ -63,9 +63,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Big Data Programming</a>
+            <a class="navbar-brand" href="/bs-sample">Big Data Programming</a>
             <br>
-            <a href="/bbs/bs-sample"><img src="/asset/img/hygge.jpg" width="200" height="50"/></a>
+            <a href="/bs-sample"><img src="/asset/img/hygge.jpg" width="200" height="50"/></a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -73,9 +73,9 @@
                 <li><a href="#">Lucy Team</a></li>
                 <li><a href="#">Bong Team</a></li>
             </ul>
-            <form class="navbar-form navbar-right" action="/bbs/bs_sample_detail">
+            <form action="/bs-sample/detail" class="navbar-form navbar-right">
                 <input type="text" name="search" class="form-control" placeholder="Search...">
-                <input type="submit" value="submit" class="btn btn-success" role="button">
+                <input type="submit" value="submit" class="btn btn-success" href="#" role="button">
             </form>
         </div>
     </div>
@@ -110,22 +110,22 @@
             <div class="row placeholders">
                 <div class="col-xs-6 col-sm-3 placeholder">
 
-                    <img src="/asset/img/min.jpg" width="200" height="200" class="img-circle" alt="Generic placeholder thumbnail">
+                    <img src="/asset/img/허민.jpg" width="200" height="200" class="img-circle" alt="Generic placeholder thumbnail">
                     <h4>MIN HEO</h4>
                     <span class="text-muted">Project Manager</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="/asset/img/sewon.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="/asset/img/김세원.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>SEWON KIM</h4>
                     <span class="text-muted">Hadoop Engineer</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="/asset/img/soonsung.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="/asset/img/황순성.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>SOONSUNG HWANG</h4>
                     <span class="text-muted">UI/UX Developer</span>
                 </div>
                 <div class="col-xs-6 col-sm-3 placeholder">
-                    <img src="/asset/img/taejoon.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                    <img src="/asset/img/김태준.jpg" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
                     <h4>TAEJOON KIM</h4>
                     <span class="text-muted">Hadoop Engineer</span>
                 </div>

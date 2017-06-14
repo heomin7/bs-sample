@@ -1,12 +1,14 @@
 package kr.re.kitri.hello.controller;
 
 import kr.re.kitri.hello.common.MockArticle;
+import kr.re.kitri.hello.dao.ArticleDao;
 import kr.re.kitri.hello.model.Article;
+import kr.re.kitri.hello.service.BbsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -23,6 +25,8 @@ import java.util.List;
  */
 @Controller
 public class BbsController {
+    @Autowired
+    private BbsService service;
 
     @RequestMapping("/bbs")
     public ModelAndView viewAll(){
@@ -53,9 +57,13 @@ public class BbsController {
         return mav;
     }
 
-    @RequestMapping("/bbs/15/remove")
-    public  String remove(){
-        return "bbs/bbs_15_remove";
+    @RequestMapping("/bbs/{articleId}/remove")
+    public  ModelAndView remove(@PathVariable("articleId") String articleId){
+
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("bbs/bbs_detail_remove");
+        mav.addObject("articleId", articleId);
+        return mav;
     }
 
     @RequestMapping(value = "/bbs/write", method = RequestMethod.GET)
@@ -67,6 +75,8 @@ public class BbsController {
     public ModelAndView doWrite(Article article){
 
         System.out.println(article);
+
+        service.registArticle(article);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("bbs/bbs_write_do");
