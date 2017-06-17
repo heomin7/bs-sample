@@ -12,6 +12,15 @@
 </head>
 <body>
 
-    <h1>${id} Page</h1>
+    <h1>${amigoId}번 글이 조회되었습니다.</h1>
+
+    <ul>
+        <li>${amigo.amigoId}</li>
+        <li>${amigo.name}</li>
+        <li>${amigo.phone}</li>
+        <li>${amigo.email}</li>
+    </ul>
+    <a href="/amigo">전체보기</a>
+    <a href="/amigo/regist">글 쓰기</a>
 </body>
 </html>

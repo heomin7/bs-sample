@@ -21,12 +21,14 @@
     <c:forEach var="article" items="${list}">
    <ul>
            <li>글번호 : ${article.articleId}</li>
-           <li>제목 : <a href="/bbs/${article.articleId}">${article.title}</a></li>
-           <li>작성자 : ${article.writer}</li>
-           <li>내용 : ${article.content}</li>
+           <li>제목 :
+               <a href="/bbs/${article.articleId}">${article.title}</a>
+               (작성자 : ${article.writer})
+           </li>
    </ul>
     </c:forEach>
 
+    <a href="/bbs/write"><button>글쓰기</a></button>
     <script src="/asset/js/jquery-3.2.1.js"></script>
     <script src="/asset/js/bootstrap.js"></script>
 </body>

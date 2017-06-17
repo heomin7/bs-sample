@@ -1,54 +1,55 @@
 package kr.re.kitri.hello.controller;
 
-import kr.re.kitri.hello.common.MockArticle;
-import kr.re.kitri.hello.dao.ArticleDao;
 import kr.re.kitri.hello.model.Article;
 import kr.re.kitri.hello.service.BbsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
 
 /**
  * /bbs ..전체보기
- * /bbs/15 .. 상세보기(15번 글)
- * /bbs/15/modify ..수정(15번 글 수정)
- * /bbs/15/remove .. 삭제(15번 글 삭제)
+ * /bbs/{articleId} .. 상세보기(15번 글)
+ * /bbs/{articleId}/modify ..수정(15번 글 수정)
+ * /bbs/{articleId}/remove .. 삭제(15번 글 삭제)
  *
  * /bbs/write .. 글 작성화면 로딩
  * /bbs/write/do .. 글 작성하기
  *
  */
 @Controller
+@RequestMapping("/bbs")
 public class BbsController {
     @Autowired
     private BbsService service;
 
-    @RequestMapping("/bbs")
+    @RequestMapping("")
     public ModelAndView viewAll(){
 
         //전체 보기를 하기위한 데이터를 가져온다.
-        MockArticle mock = new MockArticle();
-        List<Article> list = mock.getArticles();
+        List<Article> list = service.viewArticles();
 
         return new ModelAndView("bbs/view_all")
                 .addObject("list", list);
     }
 
-    @RequestMapping("/bbs/{articleId}")
+    /**
+     * 글 상세 보기
+     * @param articleId
+     * @return
+     */
+    @RequestMapping("/{articleId}")
     public ModelAndView bbsdetail(@PathVariable("articleId") String articleId){
 
+        Article article= service.viewArticle(articleId);
+
         ModelAndView mav = new ModelAndView();
-        mav.setViewName("bbs/bbs_detail");
-        mav.addObject("articleId", articleId);
-        return mav;
+        return  new ModelAndView("bbs/bbs_detail").addObject(article);
     }
 
-    @RequestMapping("/bbs/{articleId}/modify")
+    @RequestMapping("/{articleId}/modify")
     public ModelAndView modify(@PathVariable("articleId") String articleId){
 
         ModelAndView mav = new ModelAndView();
@@ -57,7 +58,7 @@ public class BbsController {
         return mav;
     }
 
-    @RequestMapping("/bbs/{articleId}/remove")
+    @RequestMapping("/{articleId}/remove")
     public  ModelAndView remove(@PathVariable("articleId") String articleId){
 
         ModelAndView mav = new ModelAndView();
@@ -66,12 +67,21 @@ public class BbsController {
         return mav;
     }
 
-    @RequestMapping(value = "/bbs/write", method = RequestMethod.GET)
+    /**
+     * 글 쓰기 화면 보기
+     * @return
+     */
+    @GetMapping("/write")
     public String write(){
         return "bbs/bbs_write";
     }
 
-    @RequestMapping(value = "/bbs/write", method = RequestMethod.POST)
+    /**
+     * 실제 글 쓰기
+     * @param article
+     * @return
+     */
+    @PostMapping("/write")
     public ModelAndView doWrite(Article article){
 
         System.out.println(article);

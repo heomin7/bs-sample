@@ -1,6 +1,7 @@
 package kr.re.kitri.hello.service;
 
 import kr.re.kitri.hello.dao.ArticleDao;
+import kr.re.kitri.hello.dao.ArticleDaoJdbc;
 import kr.re.kitri.hello.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,7 @@ public class BbsService {
      */
     public List<Article> viewArticles(){
 
-        return null;
+        return dao.selectArticles();
     }
 
     /**
@@ -41,7 +42,7 @@ public class BbsService {
      */
     public Article viewArticle(String articleId){
 
-        return null;
+        return dao.selectArticle(articleId);
     }
 
 

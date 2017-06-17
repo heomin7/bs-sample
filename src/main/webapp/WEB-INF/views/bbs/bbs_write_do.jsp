@@ -19,7 +19,7 @@
     <ul>
         <li>${article.articleId}</li>
         <li>${article.title}</li>
-        <li>${article.writer}</li>
+        <li>${article.memberId}</li>
         <li>${article.content}</li>
     </ul>
 

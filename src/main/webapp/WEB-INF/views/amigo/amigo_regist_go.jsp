@@ -15,10 +15,10 @@
     <h1>친구 등록 완료!</h1>
 
     <ul>
-        <li>친구 이름: ${name}</li>
-        <li>핸드폰: ${phone}</li>
-        <li>이메일: ${email}</li>
+        <li>친구 이름: ${amigo.name}</li>
+        <li>핸드폰: ${amigo.phone}</li>
+        <li>이메일: ${amigo.email}</li>
     </ul>
-
+<<a href="/amigo"><button>글 전체 보기</a></button>
 </body>
 </html>

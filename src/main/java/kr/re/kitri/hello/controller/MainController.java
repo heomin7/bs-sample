@@ -18,7 +18,7 @@ public class MainController {
 
     @RequestMapping("/")
     public String index(){
-        return "redirect:bbs/";
+        return "redirect:post/";
     }
 
     @RequestMapping("/bs-sample")

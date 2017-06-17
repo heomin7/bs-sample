@@ -16,10 +16,12 @@
 
 <c:forEach var="amigo" items="${list}">
     <ul>
-        <li>이 름 : ${amigo.name}</li>
-        <li>핸드폰 : <a href="/bbs/${amigo.name}">${amigo.phone}</a></li>
+        <li>이 름 : <a href="/amigo/${amigo.amigoId}">${amigo.name}</a></li>
+        <li>핸드폰 : ${amigo.phone}</li>
         <li>이메일 : ${amigo.email}</li>
     </ul>
 </c:forEach>
+
+<a href="/amigo/regist"><button>글쓰기</a></button>
 </body>
 </html>

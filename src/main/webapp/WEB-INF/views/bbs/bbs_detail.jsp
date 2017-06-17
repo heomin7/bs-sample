@@ -14,7 +14,14 @@
 </head>
 <body style="margin: 10px">
 
-    <h1>${articleId}번 페이지</h1>
-    <p>페이지 상세 내용</p>
+    <h1>${articleId}번 글이 조회되었습니다.</h1>
+    <ul>
+        <li>글 번호: ${article.articleId}</li>
+        <li>제 목: ${article.title}</li>
+        <li>작성자: ${article.writer}</li>
+        <li>내 용: ${article.content}</li>
+    </ul>
+<a href="/bbs">전체보기</a>
+<a href="/bbs/write">글 쓰기</a>
 </body>
 </html>

@@ -45,7 +45,7 @@
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon" id="sizing-addon3">
                             <i class="glyphicon glyphicon glyphicon-star"></i>작성자</span>
-                        <input type="text" name="writer" class="form-control" placeholder="작성자" aria-describedby="sizing-addon1">
+                        <input type="text" name="memberId" class="form-control" placeholder="작성자" aria-describedby="sizing-addon1">
                     </div>
                     <br>
                     <div class="input-group input-group-lg">

@@ -4,9 +4,18 @@ package kr.re.kitri.hello.model;
  * Created by minheo on 2017. 6. 13..
  */
 public class Amigo {
+    private String amigoId;
     private String name;
     private String phone;
     private String email;
+
+    public String getAmigoId() {
+        return amigoId;
+    }
+
+    public void setAmigoId(String amigoId) {
+        this.amigoId = amigoId;
+    }
 
     public String getName() {
         return name;
@@ -35,7 +44,8 @@ public class Amigo {
     @Override
     public String toString() {
         return "Amigo{" +
-                "name='" + name + '\'' +
+                "amigoId='" + amigoId + '\'' +
+                ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", email='" + email + '\'' +
                 '}';
